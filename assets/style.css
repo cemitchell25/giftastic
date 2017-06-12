@@ -1,0 +1,57 @@
+body {
+
+	background-image: url("../assets/lasers.jpg");
+
+}
+
+.mainBlock {
+
+	/*background-color: #14d156;*/
+
+	background-color: white;
+
+	box-shadow: 5px 5px 5px #888888;
+	border-radius: 15px;
+	margin-top: 100px;
+	padding-bottom: 15px;
+}
+
+h3 {
+
+	font-family: 'VT323', monospace;
+	font-size: 50px;
+}
+
+.btn-lg {
+
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+	background-color: #00e9ff;
+}
+
+.gifClass{
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+	border-radius: 15px;
+	background-color: #00e9ff;
+	margin: 10px;
+
+
+}
+
+#gif-form {
+
+	text-align: center;
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+	margin-top: 10px;
+}
+
+#add-gif {
+	width: 70px;
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+	border-radius: 15px;	
+	margin-top: 10px;
+
+}
