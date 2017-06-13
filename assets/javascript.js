@@ -50,7 +50,11 @@
 
         //this is setting the attributes to the new image div 
 
-          image.attr("src", results[i].images.fixed_height.url);
+          image.attr("src", results[i].images.fixed_height_still.url);
+          image.attr("data-still", results[i].images.fixed_height_still.url);
+          image.attr("data-state", "still");
+          image.attr("data-animate", results[i].images.fixed_height.url);
+          image.addClass("gif");
 
         //prepend -- puts said image at the top of the page
 
@@ -84,6 +88,13 @@
         gifStarter.push(gifGrab);
         console.log(gifGrab);
 
+        renderButtons();
+      });
+
+
+    $(".gif").on("click", function() {
+      
+    console.log("gif clicked called");
         var state = $(this).attr("data-state");
       // If the clicked image's state is still, update its src attribute to what its data-animate value is.
       // Then, set the image's data-state to animate
@@ -94,8 +105,8 @@
       } else {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
+        console.log("TEST");
       }
-
         renderButtons();
       });
 
