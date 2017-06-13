@@ -22,13 +22,17 @@
           // Adding the button to the buttons-view div
           $("#buttons-show").append(a);
         }
+
+
       }
 
 
-      var gifStarter = ["Tacos", "Cats", "Fail", "Puppies"];
+      var gifStarter = ["Tacos", "Cats", "Fail", "Puppies", "Murica", "Grumpy Cat", "Eagles", "Doge", "Anchorman", "Nope"];
 
       // Function for dumping the JSON content for each button into the div
       function displayGif() {
+
+        reset();
 
         var gifImage = $(this).attr("data-name");
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifImage + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -50,11 +54,20 @@
 
         //prepend -- puts said image at the top of the page
 
-        $("#gifShow").prepend(image);
+         var rating = results[i].rating;
+         var gifDiv = $("<div class= 'item'>");
+          var p = $("<p>").text("Rating: " + rating);
+
+
+          gifDiv.prepend(p);
+          gifDiv.prepend(image);
+          $("#gifShow").prepend(gifDiv);
+
 
 }
 
           renderButtons();
+
         });
       }
 
@@ -86,9 +99,19 @@
         renderButtons();
       });
 
+function reset() {
+
+  $("#gifShow").empty();
+
+  console.log("RESET")
+
+}
+
       // Function for displaying the movie info
       // Using $(document).on instead of $(".movie").on to add event listenersto dynamically generated elements
-      $(document).on("click", ".gifClass", displayGif);
+      $(document.body).on("click", ".gifClass", displayGif); 
+                   
+                
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
