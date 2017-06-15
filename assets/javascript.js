@@ -35,7 +35,7 @@
         reset();
 
         var gifImage = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifImage + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifImage + "&api_key=dc6zaTOxFJmzC&limit=10";
 
         $.ajax({
           url: queryURL,
@@ -92,8 +92,8 @@
       });
 
 
-    $(".gif").on("click", function() {
-      
+    $(document).on("click", ".gif", function() {
+
     console.log("gif clicked called");
         var state = $(this).attr("data-state");
       // If the clicked image's state is still, update its src attribute to what its data-animate value is.
